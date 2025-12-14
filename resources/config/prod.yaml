@@ -1,0 +1,38 @@
+# Production environment configuration
+# IMPORTANT: All sensitive values should be provided via environment variables
+
+# Application settings
+app_env: "production"
+app_debug: false
+app_logs_to_file: true
+
+# Database configuration - Production MySQL
+database_url: "mysql+asyncmy://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+
+# API configuration
+api_prefix: "/api"
+api_title: "ProRyx Property Management System"
+api_version: "0.1.0"
+
+# CORS configuration
+cors_origins:
+  - "https://proryx.example.com"
+  - "https://www.proryx.example.com"
+
+# Frontend configuration
+frontend_url: "https://proryx.example.com"
+
+# JWT Configuration - Use strong secrets in production!
+jwt_secret_key: "${JWT_SECRET_KEY}"
+jwt_algorithm: "HS256"
+access_token_expire_minutes: 30
+refresh_token_expire_days: 7
+refresh_token_remember_days: 30
+
+# Security Configuration
+max_login_attempts: 5
+lockout_duration_minutes: 30
+
+# Rate Limiting
+rate_limit_enabled: true
+rate_limit_per_minute: 60

@@ -1,0 +1,37 @@
+# Development server environment configuration
+
+# Application settings
+app_env: "development"
+app_debug: true
+app_logs_to_file: true
+
+# Database configuration - Development server MySQL
+database_url: "mysql+asyncmy://proryx_dev:${DB_PASSWORD}@dev-mysql-server:3306/db_proryx_dev"
+
+# API configuration
+api_prefix: "/api"
+api_title: "ProRyx Property Management System - Development"
+api_version: "0.1.0"
+
+# CORS configuration
+cors_origins:
+  - "https://dev.proryx.example.com"
+  - "http://localhost:3000"
+
+# Frontend configuration
+frontend_url: "https://dev.proryx.example.com"
+
+# JWT Configuration
+jwt_secret_key: "${JWT_SECRET_KEY}"
+jwt_algorithm: "HS256"
+access_token_expire_minutes: 30
+refresh_token_expire_days: 7
+refresh_token_remember_days: 30
+
+# Security Configuration
+max_login_attempts: 5
+lockout_duration_minutes: 30
+
+# Rate Limiting
+rate_limit_enabled: true
+rate_limit_per_minute: 100

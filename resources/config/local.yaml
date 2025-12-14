@@ -1,0 +1,49 @@
+# Local development environment configuration
+# Uses local MySQL for development and testing
+
+# Application settings
+app_env: "development"
+app_debug: true
+app_logs_to_file: true
+
+# Database configuration - LOCAL MYSQL
+# Replace with your actual database credentials
+database_url: "mysql+asyncmy://swm_dev:swm_dev_123@localhost:3306/db_proryx"
+
+# API configuration
+api_prefix: "/api"
+api_title: "ProRyx Property Management System - Local Development"
+api_version: "0.1.0"
+
+# CORS configuration - Localhost ports
+cors_origins:
+  - "http://localhost:5173"  # Vite dev server
+  - "http://localhost:3000"  # React app
+  - "http://localhost:8000"  # FastAPI
+  - "http://localhost:8080"  # Alternative port
+
+# Frontend configuration
+frontend_url: "http://localhost:3000"
+
+# JWT Configuration - Development keys (not secure, only for local!)
+jwt_secret_key: "proryx-dev-secret-key-change-in-production"
+jwt_algorithm: "HS256"
+access_token_expire_minutes: 30
+refresh_token_expire_days: 7
+refresh_token_remember_days: 30
+
+# Security Configuration
+max_login_attempts: 5
+lockout_duration_minutes: 30
+
+# Rate Limiting - Disabled in development
+rate_limit_enabled: false
+rate_limit_per_minute: 1000
+
+# System Initialization (for automatic setup on fresh local DB)
+init_account_name: "Development Account"
+init_company_name: "Dev Company"
+init_admin_email: "admin@example.com"
+init_admin_password: "DevAdmin123!"
+init_admin_first_name: "Dev"
+init_admin_last_name: "Administrator"
